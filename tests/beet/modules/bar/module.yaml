@@ -1,0 +1,8 @@
+name: arcenstuff.bar
+version: 0.0.0
+title:
+  - text: "[Arcenstuff] "
+    color: gray
+  - text: Bar
+    color: aqua
+description: This is a description!
