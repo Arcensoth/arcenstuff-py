@@ -6,39 +6,39 @@ from arcenstuff.pydantic.examples import Job, Person, Pet
 
 
 def test_job():
-    Job.transform({"type": "Engineer", "hours": 40})
+    Job.validate({"type": "Engineer", "hours": 40})
 
 
 def test_job_with_missing_type():
     with pytest.raises(MissingType):
-        Job.transform({"hours": 40})
+        Job.validate({"hours": 40})
 
 
 def test_job_with_unknown_type():
     with pytest.raises(UnknownType):
-        Job.transform({"type": "Foo", "hours": 40})
+        Job.validate({"type": "Foo", "hours": 40})
 
 
 def test_pet():
-    Pet.transform({"type": "cat", "name": "Boots"})
+    Pet.validate({"type": "cat", "name": "Boots"})
 
 
 def test_pet_with_missing_type():
     with pytest.raises(MissingType):
-        Pet.transform({"name": "Boots"})
+        Pet.validate({"name": "Boots"})
 
 
 def test_pet_with_invalid_type():
     with pytest.raises(InvalidModule):
-        Pet.transform({"type": "parrot", "name": "Boots"})
+        Pet.validate({"type": "parrot", "name": "Boots"})
 
 
 def test_person_from_str():
-    Person.transform("Alice")
+    Person.validate("Alice")
 
 
 def test_person_with_name():
-    Person.transform(
+    Person.validate(
         {
             "name": "Alice",
         }
@@ -46,7 +46,7 @@ def test_person_with_name():
 
 
 def test_person_with_name_and_job():
-    Person.transform(
+    Person.validate(
         {
             "name": "Alice",
             "job": {"type": "Engineer", "hours": 40},
@@ -55,7 +55,7 @@ def test_person_with_name_and_job():
 
 
 def test_person_with_name_and_pets():
-    Person.transform(
+    Person.validate(
         {
             "name": "Bob",
             "pets": [
@@ -67,7 +67,7 @@ def test_person_with_name_and_pets():
 
 
 def test_person_with_name_and_job_and_pet():
-    Person.transform(
+    Person.validate(
         {
             "name": "Carol",
             "job": {"type": "Teacher", "hours": 20},
@@ -78,7 +78,7 @@ def test_person_with_name_and_job_and_pet():
 
 def test_person_with_missing_job_type():
     with pytest.raises(ValidationError):
-        Person.transform(
+        Person.validate(
             {
                 "name": "Alice",
                 "job": {"hours": 40},
@@ -88,7 +88,7 @@ def test_person_with_missing_job_type():
 
 def test_person_with_unknown_job_type():
     with pytest.raises(ValidationError):
-        Person.transform(
+        Person.validate(
             {
                 "name": "Alice",
                 "job": {"type": "Foo", "hours": 40},
@@ -98,7 +98,7 @@ def test_person_with_unknown_job_type():
 
 def test_person_with_missing_pet_type():
     with pytest.raises(ValidationError):
-        Person.transform(
+        Person.validate(
             {
                 "name": "Bob",
                 "pets": [
@@ -110,7 +110,7 @@ def test_person_with_missing_pet_type():
 
 def test_person_with_unknown_pet_type():
     with pytest.raises(ValidationError):
-        Person.transform(
+        Person.validate(
             {
                 "name": "Bob",
                 "pets": [
