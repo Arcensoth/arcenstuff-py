@@ -23,7 +23,7 @@ pytest = "^6.2.5"
 # Stuff that various independent submodules use.
 pydantic = "^1.9.0"
 beet = ">=0.50.6"
-mecha = ">=0.35.0"
+mecha = ">=0.35.2"
 
 [tool.pyright]
 typeCheckingMode = "strict"
