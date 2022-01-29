@@ -4,6 +4,10 @@ from pydantic import ValidationError
 from arcenstuff.pydantic.examples import Person
 
 
+def test_person_from_str():
+    Person.parse_obj("Alice")
+
+
 def test_person_with_name():
     Person.parse_obj(
         {

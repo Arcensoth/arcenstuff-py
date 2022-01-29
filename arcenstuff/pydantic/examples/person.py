@@ -1,6 +1,6 @@
-from typing import Optional
+from typing import Any, Optional
 
-from pydantic import BaseModel
+from arcenstuff.pydantic.normalizable_model import NormalizableModel
 
 from .job import Job
 from .pet import Pet
@@ -8,7 +8,13 @@ from .pet import Pet
 __all__ = ("Person",)
 
 
-class Person(BaseModel):
+class Person(NormalizableModel):
     name: str
     job: Optional[Job]
     pets: Optional[list[Pet]]
+
+    @classmethod
+    def __normalize__(cls, value: Any) -> Any:
+        if isinstance(value, str):
+            return dict(name=value)
+        return value
