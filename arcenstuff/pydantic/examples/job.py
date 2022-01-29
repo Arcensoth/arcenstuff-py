@@ -1,17 +1,15 @@
 from abc import ABC, abstractmethod
 
-from pydantic import BaseModel
-
-from arcenstuff.pydantic import SubClassifier
+from arcenstuff.pydantic import SubClassifier, TransformableModel
 
 __all__ = ("Job",)
 
 
-class Job(BaseModel, ABC):
+class Job(TransformableModel, ABC):
     hours: int
 
     @classmethod
-    def __get_validators__(cls):
+    def __transformers__(cls):
         yield SubClassifier(cls, type_field="type")
 
     @abstractmethod

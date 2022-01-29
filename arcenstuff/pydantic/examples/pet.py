@@ -1,17 +1,15 @@
 from abc import ABC, abstractmethod
 
-from pydantic import BaseModel
-
-from arcenstuff.pydantic import ModuleClassifier
+from arcenstuff.pydantic import ModuleClassifier, TransformableModel
 
 __all__ = ("Pet",)
 
 
-class Pet(BaseModel, ABC):
+class Pet(TransformableModel, ABC):
     name: str
 
     @classmethod
-    def __get_validators__(cls):
+    def __transformers__(cls):
         yield ModuleClassifier(
             cls,
             type_field="type",
