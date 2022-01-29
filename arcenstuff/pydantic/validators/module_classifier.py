@@ -12,7 +12,9 @@ from arcenstuff.pydantic.errors import (
 )
 from arcenstuff.pydantic.module_resolver import resolve_module_function
 
-__all__ = ("ModuleClassifier",)
+__all__ = [
+    "ModuleClassifier",
+]
 
 
 @dataclass

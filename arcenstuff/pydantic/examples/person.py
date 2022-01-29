@@ -5,7 +5,9 @@ from arcenstuff.pydantic.transformable_model import TransformableModel
 from .job import Job
 from .pet import Pet
 
-__all__ = ("Person",)
+__all__ = [
+    "Person",
+]
 
 
 class Person(TransformableModel):

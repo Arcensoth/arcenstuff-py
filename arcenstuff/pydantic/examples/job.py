@@ -2,7 +2,9 @@ from abc import ABC, abstractmethod
 
 from arcenstuff.pydantic import SubClassifier, TransformableModel
 
-__all__ = ("Job",)
+__all__ = [
+    "Job",
+]
 
 
 class Job(TransformableModel, ABC):

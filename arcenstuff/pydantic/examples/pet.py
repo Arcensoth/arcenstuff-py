@@ -2,7 +2,9 @@ from abc import ABC, abstractmethod
 
 from arcenstuff.pydantic import ModuleClassifier, TransformableModel
 
-__all__ = ("Pet",)
+__all__ = [
+    "Pet",
+]
 
 
 class Pet(TransformableModel, ABC):

@@ -1,12 +1,12 @@
 from pydantic.errors import PydanticTypeError
 
-__all__ = (
+__all__ = [
     "MissingType",
     "UnknownType",
     "InvalidModule",
     "InvalidModuleFunction",
     "UnexpectedInstance",
-)
+]
 
 
 class MissingType(PydanticTypeError):

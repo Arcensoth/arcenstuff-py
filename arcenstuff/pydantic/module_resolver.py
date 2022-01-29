@@ -2,7 +2,9 @@ from collections import defaultdict
 from importlib import import_module
 from typing import Any, DefaultDict
 
-__all__ = ("resolve_module_function",)
+__all__ = [
+    "resolve_module_function",
+]
 
 
 # Singleton constant mapping (module name, function name) -> function.

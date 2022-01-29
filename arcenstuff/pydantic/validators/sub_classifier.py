@@ -6,7 +6,9 @@ from pydantic.main import BaseModel
 
 from arcenstuff.pydantic.errors import MissingType, UnknownType
 
-__all__ = ("SubClassifier",)
+__all__ = [
+    "SubClassifier",
+]
 
 
 @dataclass

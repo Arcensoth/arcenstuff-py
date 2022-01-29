@@ -3,7 +3,9 @@ from typing import Any, Generator, TypeVar
 from pydantic import BaseModel
 from pydantic.typing import AnyCallable
 
-__all__ = ("TransformableModel",)
+__all__ = [
+    "TransformableModel",
+]
 
 
 T = TypeVar("T", bound="TransformableModel")
