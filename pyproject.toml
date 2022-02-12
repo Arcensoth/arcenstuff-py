@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "arcenstuff"
-version = "0.0.2"
+version = "0.0.3"
 description = "A personal assortment of Python utilities that don't have their own place."
 authors = ["Arcensoth <arcensoth@gmail.com>"]
 license = "MIT"
