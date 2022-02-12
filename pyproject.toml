@@ -15,15 +15,15 @@ classifiers = [
 python = "^3.10"
 
 [tool.poetry.dev-dependencies]
-black = "^21.12b0"
+black = "^22.1.0"
 isort = "^5.10.1"
 rope = "^0.22.0"
 pytest = "^6.2.5"
 
 # Stuff that various independent submodules use.
 pydantic = "^1.9.0"
-beet = ">=0.50.6"
-mecha = ">=0.35.2"
+beet = "0.50.7"
+mecha = "0.36.3"
 
 [tool.pyright]
 typeCheckingMode = "strict"
