@@ -13,7 +13,6 @@ class Pet(TransformableModel, ABC):
     @classmethod
     def __transformers__(cls):
         yield ModuleClassifier(
-            cls,
             type_field="type",
             default_module="arcenstuff.pydantic.examples.pets",
             function_name="create",

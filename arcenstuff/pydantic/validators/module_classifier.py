@@ -2,14 +2,8 @@ from dataclasses import dataclass
 from typing import Any
 
 from pydantic.errors import DictError
-from pydantic.main import BaseModel
 
-from arcenstuff.pydantic.errors import (
-    InvalidModule,
-    InvalidModuleFunction,
-    MissingType,
-    UnexpectedInstance,
-)
+from arcenstuff.pydantic.errors import InvalidModule, InvalidModuleFunction, MissingType
 from arcenstuff.pydantic.module_resolver import resolve_module_function
 
 __all__ = [
@@ -19,7 +13,6 @@ __all__ = [
 
 @dataclass
 class ModuleClassifier:
-    type_class: type[BaseModel]
     type_field: str
     default_module: str
     function_name: str
@@ -60,15 +53,6 @@ class ModuleClassifier:
             raise InvalidModuleFunction(
                 module_name=module_name, function_name=self.function_name
             ) from ex
-
-        # Raise an error if the object is not of the expected type.
-        if not isinstance(obj, self.type_class):
-            raise UnexpectedInstance(
-                expected_type=self.type_class,
-                actual_type=type(obj),
-                function_name=self.function_name,
-                module_name=module_name,
-            )
 
         return obj
 
