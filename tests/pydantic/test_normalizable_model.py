@@ -21,10 +21,10 @@ class Job(NormalizableModel):
     __root__: Annotated[Union["Engineer", "Teacher"], Field(discriminator="type")]
 
     @classmethod
-    def normalize_input(cls, obj: Any) -> Any:
-        if isinstance(obj, str):
-            return dict(type=obj)
-        return obj
+    def normalize_input(cls, value: Any) -> Any:
+        if isinstance(value, str):
+            return dict(type=value)
+        return value
 
 
 class Engineer(JobBase):
@@ -89,10 +89,10 @@ class Person(NormalizableModel):
     pets: Optional[list[Pet]]
 
     @classmethod
-    def normalize_input(cls, obj: Any) -> Any:
-        if isinstance(obj, str):
-            return dict(name=obj)
-        return obj
+    def normalize_input(cls, value: Any) -> Any:
+        if isinstance(value, str):
+            return dict(name=value)
+        return value
 
 
 # @@ TESTS
