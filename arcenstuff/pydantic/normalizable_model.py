@@ -17,8 +17,8 @@ class NormalizableModel(BaseModel):
     """A model that normalizes input before validation."""
 
     @classmethod
-    def normalize_input(cls, obj: Any) -> Any:
-        return obj
+    def normalize_input(cls, value: Any) -> Any:
+        return value
 
     # @overrides BaseModel
     @classmethod
