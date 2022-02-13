@@ -1,8 +1,0 @@
-name: arcenstuff.branch.one
-version: 0.0.0
-title:
-  - text: "[Arcenstuff] "
-    color: gray
-  - text: Branch One
-    color: yellow
-description: This is a description!

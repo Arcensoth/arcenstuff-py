@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "arcenstuff"
-version = "0.0.5"
+version = "0.0.6"
 description = "A personal assortment of Python utilities that don't have their own place."
 authors = ["Arcensoth <arcensoth@gmail.com>"]
 license = "MIT"
@@ -22,8 +22,6 @@ pytest = "^6.2.5"
 
 # Stuff that various independent submodules use.
 pydantic = "^1.9.0"
-beet = "0.50.7"
-mecha = "0.36.3"
 
 [tool.pyright]
 typeCheckingMode = "strict"
